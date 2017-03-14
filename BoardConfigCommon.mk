@@ -50,7 +50,7 @@ BOARD_KERNEL_IMAGE_NAME := Image.gz-dtb
 BOARD_KERNEL_PAGESIZE := 2048
 BOARD_KERNEL_TAGS_OFFSET := 0x00000100
 BOARD_RAMDISK_OFFSET := 0x01000000
-TARGET_KERNEL_APPEND_DTB := true
+#TARGET_KERNEL_APPEND_DTB := true
 TARGET_KERNEL_ARCH := arm64
 TARGET_KERNEL_HEADER_ARCH := arm64
 TARGET_KERNEL_SOURCE := kernel/tinno/msm8937
@@ -142,7 +142,8 @@ TARGET_LEGACY_HW_DISK_ENCRYPTION := true
 TARGET_CRYPTFS_HW_PATH ?= vendor/qcom/opensource/cryptfs_hw
 
 # Filesystem
-TARGET_ANDROID_FILESYSTEM_CONFIG_H := $(COMMON_PATH)/android_filesystem_config.h
+#TARGET_ANDROID_FILESYSTEM_CONFIG_H := $(COMMON_PATH)/android_filesystem_config.h
+TARGET_FS_CONFIG_GEN := $(COMMON_PATH)/config.fs
 
 # FM
 BOARD_HAVE_QCOM_FM := true
@@ -223,4 +224,7 @@ WPA_SUPPLICANT_VERSION           := VER_0_8_X
 # HIDL
 # HIDL
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/manifest.xml:system/vendor/manifest.xml
+    $(COMMON_PATH)/manifest.xml:system/vendor/manifest.xml
+# Lights
+TARGET_PROVIDES_LIBLIGHT := true
+
