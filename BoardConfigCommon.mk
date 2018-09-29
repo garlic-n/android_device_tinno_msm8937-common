@@ -219,3 +219,8 @@ WPA_SUPPLICANT_VERSION           := VER_0_8_X
 
 # Inherit from the proprietary version
 -include vendor/tinno/msm8937-common/BoardConfigVendor.mk
+
+# HIDL
+# HIDL
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/manifest.xml:system/vendor/manifest.xml
