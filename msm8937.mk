@@ -16,6 +16,10 @@
 
 $(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
 
+# TREBLE
+persist.media.treble_omx=false
+
+
 # Get non-open-source specific aspects
 $(call inherit-product, vendor/tinno/msm8937-common/msm8937-common-vendor.mk)
 
@@ -32,6 +36,7 @@ TARGET_SCREEN_WIDTH := 1080
 
 # Bluetooth
 PRODUCT_PACKAGES += \
+    libbt-vendor \
     android.hardware.bluetooth@1.0-impl
 
 # Dalvik Heap's / HWUI overrides
@@ -128,11 +133,21 @@ PRODUCT_PACKAGES += \
 
 # Display
 PRODUCT_PACKAGES += \
+    android.hardware.graphics.allocator@2.0-impl \
+    android.hardware.graphics.allocator@2.0-service \
+    android.hardware.graphics.composer@2.1-impl \
+    android.hardware.graphics.mapper@2.0-impl \
+    android.hardware.memtrack@1.0-impl \
     copybit.msm8937 \
     gralloc.msm8937 \
     hwcomposer.msm8937 \
     memtrack.msm8937 \
+    libgenlock \
     liboverlay
+
+# RenderScript HAL
+PRODUCT_PACKAGES += \
+    android.hardware.renderscript@1.0-impl
 
 # Data
 PRODUCT_COPY_FILES += \
@@ -265,6 +280,7 @@ PRODUCT_PACKAGES += \
     libQWiFiSoftApCfg \
     libwpa_client \
     hostapd \
+    wifilogd \
     wpa_supplicant \
     wpa_supplicant.conf \
     wcnss_service
