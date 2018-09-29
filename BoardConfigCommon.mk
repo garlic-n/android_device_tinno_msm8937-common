@@ -109,9 +109,9 @@ USE_DEVICE_SPECIFIC_CAMERA := true
 # Charger
 BOARD_CHARGER_ENABLE_SUSPEND := true
 
-# CMHW
-BOARD_USES_CYANOGEN_HARDWARE := true
-BOARD_HARDWARE_CLASS += hardware/cyanogen/cmhw
+# LINEAGEHW
+BOARD_USES_LINEAGE_HARDWARE := true
+BOARD_HARDWARE_CLASS += hardware/lineage/lineagehw
 
 # CNE
 BOARD_USES_QCNE := true
@@ -138,6 +138,8 @@ TARGET_USES_NEW_ION_API :=true
 
 # Encryption
 TARGET_HW_DISK_ENCRYPTION := true
+TARGET_LEGACY_HW_DISK_ENCRYPTION := true
+TARGET_CRYPTFS_HW_PATH ?= vendor/qcom/opensource/cryptfs_hw
 
 # Filesystem
 TARGET_ANDROID_FILESYSTEM_CONFIG_H := $(COMMON_PATH)/android_filesystem_config.h
@@ -184,7 +186,7 @@ TARGET_USERIMAGES_USE_EXT4 := true
 
 # RIL
 PROTOBUF_SUPPORTED := true
-TARGET_RIL_VARIANT := caf
+#TARGET_RIL_VARIANT := caf
 
 # SELinux
 include device/qcom/sepolicy/sepolicy.mk
