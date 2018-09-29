@@ -251,6 +251,7 @@ PRODUCT_PACKAGES += \
 
 # Qualcomm dependencies
 PRODUCT_PACKAGES += \
+    libdisplayconfig \
     libtinyxml
 
 # RIL
