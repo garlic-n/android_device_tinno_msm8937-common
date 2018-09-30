@@ -118,11 +118,11 @@ BOARD_HARDWARE_CLASS += hardware/lineage/lineagehw
 BOARD_USES_QCNE := true
 
 # Dex
-ifeq ($(HOST_OS),linux)
-  ifneq ($(TARGET_BUILD_VARIANT),eng)
-    WITH_DEXPREOPT ?= true
-  endif
-endif
+#ifeq ($(HOST_OS),linux)
+#  ifneq ($(TARGET_BUILD_VARIANT),eng)
+#    WITH_DEXPREOPT ?= true
+#  endif
+#endif
 WITH_DEXPREOPT_BOOT_IMG_ONLY ?= true
 
 # Display
@@ -236,3 +236,5 @@ TARGET_PROVIDES_LIBLIGHT := true
 
 #DONT_DEXPREOPT_PREBUILTS := true
 #WITH_DEXPREOPT_BOOT_IMG_AND_SYSTEM_SERVER_ONLY := true
+
+WITH_DEXPREOPT := false
