@@ -46,7 +46,7 @@
     </hal>
     <hal format="hidl">
         <name>android.hardware.camera.provider</name>
-        <transport>hwbinder</transport>
+        <transport arch="32+64">passthrough</transport>
         <version>2.4</version>
         <interface>
             <name>ICameraProvider</name>
@@ -177,15 +177,6 @@
         <version>1.0</version>
         <interface>
             <name>IMemtrack</name>
-            <instance>default</instance>
-        </interface>
-    </hal>
-    <hal format="hidl">
-        <name>android.hardware.nfc</name>
-        <transport>hwbinder</transport>
-        <version>1.0</version>
-        <interface>
-            <name>INfc</name>
             <instance>default</instance>
         </interface>
     </hal>
@@ -422,15 +413,6 @@
         <version>1.0</version>
         <interface>
             <name>IDisplayPostproc</name>
-            <instance>default</instance>
-        </interface>
-    </hal>
-    <hal format="hidl">
-        <name>vendor.nxp.hardware.nfc</name>
-        <transport>hwbinder</transport>
-        <version>1.0</version>
-        <interface>
-            <name>INqNfc</name>
             <instance>default</instance>
         </interface>
     </hal>
